@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './circular_progress_bar.dart';
 
 class PasswordStrengthField extends StatelessWidget {
   @override
@@ -23,31 +24,18 @@ class PasswordStrengthField extends StatelessWidget {
             ),
           ),
           Flexible(
-            child: Stack(
-                alignment: AlignmentDirectional.center,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.grey[500],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    height: 26,
-                    width: 26,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    '😀',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ]),
-          )
+            child: CustomPaint(
+              foregroundPainter: CircularProgressPainter(),
+              child: Container(
+                width: 200,
+                height: 200,
+                child: Text(
+                  '😀',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

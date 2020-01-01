@@ -1,7 +1,9 @@
 /// Estimates the strength of a password against checking a list of the most common passwords.
+/// 
 double estimateCommonDictionaryStrength(String password) {
   return _dictionary.contains(password) ? 0.0 : 1.0;
 }
+  
 
 final _dictionary = Set.from([
   '123456',
@@ -10005,3 +10007,4 @@ final _dictionary = Set.from([
   'brook',
   'brady',
 ]);
+
